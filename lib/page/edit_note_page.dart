@@ -21,7 +21,8 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
   late String title;
   late String description;
   late String phone;
-  late String dateToContribute;
+  late String status;
+  late String dateToRedeem;
 
   @override
   void initState() {
@@ -31,6 +32,8 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
     number = widget.note?.number ?? 0;
     title = widget.note?.title ?? '';
     phone = widget.note?.phone ?? '';
+    status = widget.note?.status ?? '';
+    dateToRedeem = widget.note?.dateToRedeem ?? '';
     description = widget.note?.description ?? '';
   }
 
@@ -47,6 +50,8 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
             phone : phone,
             title: title,
             description: description,
+            status: status,
+            dateToRedeem: dateToRedeem,
             onChangedImportant: (isImportant) =>
                 setState(() => this.isImportant = isImportant),
             onChangedNumber: (number) => setState(() => this.number = number),
@@ -55,6 +60,10 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
                 setState(() => this.description = description),
             onChangedPhone: (phone) =>
                 setState(() => this.phone = phone),
+            onChangedStatus: (status) =>
+                setState(() => this.status = status),
+            onChangedDate: (dateToRedeem) =>
+                setState(() => this.dateToRedeem = dateToRedeem),
           ),
         ),
       );
@@ -97,6 +106,9 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       number: number,
       title: title,
       description: description,
+      phone: phone,
+      status: status,
+      dateToRedeem: dateToRedeem,
     );
 
     await NotesDatabase.instance.update(note);
@@ -108,7 +120,9 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       phone: phone,
       isImportant: true,
       number: number,
+      status: status,
       description: description,
+      dateToRedeem: dateToRedeem,
       createdTime: DateTime.now(),
     );
 

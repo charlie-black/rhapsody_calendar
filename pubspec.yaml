@@ -37,6 +37,7 @@ dependencies:
   provider:
   google_fonts:
   shared_preferences:
+  select_form_field:
 
 dev_dependencies:
   flutter_test:

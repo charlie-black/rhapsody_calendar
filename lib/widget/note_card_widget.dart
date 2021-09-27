@@ -37,34 +37,50 @@ class NoteCardWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              time,
-              style: TextStyle(color: Colors.grey.shade700),
-            ),
-            SizedBox(height: 4),
-            Text(
+
+
+            Text("Name : "+
               note.title,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 4),
-            Text(
+            SizedBox(height: 10),
+            Text("Phone Number : "+
               note.phone,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: 15,
 
               ),
             ),
-            SizedBox(height: 4),
-            Text(
+            SizedBox(height: 10),
+            Text("Number of  Copies : "+
               note.description,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text("Date Pledged : "+
+                time,
+              style: TextStyle(color: Colors.grey.shade700),
+            ),
+            SizedBox(height: 10),
+            Text("Date to Redeem : "+
+                note.dateToRedeem,
+              style: TextStyle(color: Colors.grey.shade700),
+            ),
+            SizedBox(height: 10),
+            Text("Pledge Status : "+
+              note.status,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),

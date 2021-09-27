@@ -70,6 +70,16 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
                     Text(
                       note.description,
                       style: TextStyle(color: Colors.white70, fontSize: 18),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      note.dateToRedeem,
+                      style: TextStyle(color: Colors.white70, fontSize: 18),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      note.status,
+                      style: TextStyle(color: Colors.white70, fontSize: 18),
                     )
                   ],
                 ),

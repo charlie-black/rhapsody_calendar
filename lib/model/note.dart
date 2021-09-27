@@ -3,7 +3,7 @@ final String tableNotes = 'notes';
 class NoteFields {
   static final List<String> values = [
     /// Add all fields
-    id, isImportant, number, title, description, phone, time
+    id, isImportant, number, title, description, phone, time,status,dateToRedeem
   ];
 
   static final String id = '_id';
@@ -12,8 +12,11 @@ class NoteFields {
   static final String title = 'title';
   static final String description = 'description';
   static final String time = 'time';
-  static final String date = 'date';
+  static final String dateToRedeem = 'date';
   static final String phone = 'phone';
+  static final String status = 'status';
+
+
 }
 
 class Note {
@@ -23,7 +26,8 @@ class Note {
   final String title;
   final String description;
   final String phone;
-
+  final String status;
+  final String dateToRedeem;
   final DateTime createdTime;
 
   const Note({
@@ -32,7 +36,9 @@ class Note {
     required this.number,
     required this.title,
     required this.phone,
+    required this.status,
     required this.description,
+    required this.dateToRedeem,
     required this.createdTime,
   });
 
@@ -43,6 +49,8 @@ class Note {
     String? title,
     String? description,
     String? phone,
+    String? status,
+    String? dateToRedeem,
     DateTime? createdTime,
   }) =>
       Note(
@@ -52,6 +60,8 @@ class Note {
         title: title ?? this.title,
         phone: phone ?? this.phone,
         description: description ?? this.description,
+        status: status ?? this.status,
+        dateToRedeem: dateToRedeem ?? this.dateToRedeem,
         createdTime: createdTime ?? this.createdTime,
       );
 
@@ -62,6 +72,8 @@ class Note {
         title: json[NoteFields.title] as String,
         description: json[NoteFields.description] as String,
         phone: json[NoteFields.phone] as String,
+        status: json[NoteFields.status] as String,
+        dateToRedeem: json[NoteFields.dateToRedeem] as String,
         createdTime: DateTime.parse(json[NoteFields.time] as String),
       );
 
@@ -72,6 +84,8 @@ class Note {
         NoteFields.number: number,
         NoteFields.description: description,
         NoteFields.phone: phone,
+        NoteFields.status: status,
+        NoteFields.dateToRedeem: dateToRedeem,
         NoteFields.time: createdTime.toIso8601String(),
       };
 }

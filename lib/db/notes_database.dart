@@ -38,6 +38,8 @@ CREATE TABLE $tableNotes (
   ${NoteFields.description} $textType,
   ${NoteFields.time} $textType,
   ${NoteFields.phone} $textType,
+  ${NoteFields.status} $textType,
+  ${NoteFields.dateToRedeem} $textType
   
   
   )
